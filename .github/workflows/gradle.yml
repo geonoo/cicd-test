@@ -60,10 +60,4 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: |
-        aws deploy create-deployment \
-        --application-name geonoo-spring \
-        --deployment-group-name geonoo-spring \
-        --file-exists-behavior OVERWRITE \
-        --s3-location bucket=geonoo-spring,bundleType=zip,key=geonoo-spring.zip \
-        --region ap-northeast-2
+      run : aws deploy create-deployment --application-name geonoo-spring --deployment-group-name geonoo-spring --file-exists-behavior OVERWRITE --s3-location bucket=geonoo-spring,bundleType=zip,key=geonoo-spring.zip --region ap-northeast-2
